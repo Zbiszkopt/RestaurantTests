@@ -1,0 +1,51 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UserSecretsId>aspnet-WebApi-9dd873c4-73cb-4c2f-aa47-cc1940459b19</UserSecretsId>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Models\Nowy folder\**" />
+    <Compile Remove="Nowy folder1\**" />
+    <Compile Remove="Nowy folder\**" />
+    <Content Remove="Models\Nowy folder\**" />
+    <Content Remove="Nowy folder1\**" />
+    <Content Remove="Nowy folder\**" />
+    <EmbeddedResource Remove="Models\Nowy folder\**" />
+    <EmbeddedResource Remove="Nowy folder1\**" />
+    <EmbeddedResource Remove="Nowy folder\**" />
+    <None Remove="Models\Nowy folder\**" />
+    <None Remove="Nowy folder1\**" />
+    <None Remove="Nowy folder\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Remove="Models\AuthMessageSenderOptions.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore" Version="6.0.10" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="6.0.13" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity.UI" Version="6.0.13" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="6.0.13" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="6.0.13">
+
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="6.0.11" />
+    <PackageReference Include="SendGrid" Version="9.28.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Services\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="wwwroot\css\template\simplestyle\images\rigcz.jpg" />
+  </ItemGroup>
+
+</Project>

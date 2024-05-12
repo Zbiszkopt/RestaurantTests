@@ -1,0 +1,71 @@
+﻿
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <title>@ViewData["Title"] - RIGCz</title>
+    <meta name="description" content="website description" />
+    <meta name="keywords" content="restauracja, rigcz, jedzenie" />
+    <meta http-equiv="content-type" content="text/html; charset=windows-1252" />
+    <link rel="stylesheet" type="text/css" href="~/css/template/simplestyle/style.css" />
+</head>
+
+<body>
+    <div id="main">
+        <div id="header">
+            <div id="logo">
+                <div id="logo_text">
+                   
+                    <h1><a asp-controller="Home" asp-action="Index">restauracja<span class="logo_colour">RIGCz</span></a></h1>
+                    <h2>Zamów. Odbierz. Ciesz się.</h2>
+                </div>
+            </div>
+            <div id="menubar">
+                <ul id="menu">
+                   
+                    <li class="selected"><a asp-controller="Home" asp-action="Index">Strona Główna</a></li>
+                    <li><a asp-controller="Dishes" asp-action="Index">Menu</a></li>
+                    <li><a asp-controller="Home" asp-action="Contact">Kontakt</a></li>
+                    <partial name="_LoginPartial" />
+                </ul>
+                
+            </div>
+        </div>
+        <div id="content_header"></div>
+        <div id="site_content">
+            <div id="banner"></div>
+           
+            <div id="sidebar_container">
+                <div class="sidebar">
+                    <div class="sidebar_top"></div>
+                    <div class="sidebar_item">
+        
+                        <h3>Nasze social media:</h3>
+                        <h4><a href="#">Facebook</h4>
+                        <h4><a href="#">Instagram</h4>
+                    </div>
+                    <div class="sidebar_base"></div>
+                </div>
+                
+            </div>
+            <div id="content">
+                <div class="container">
+                    <main role="main" class="pb-3">
+                        @RenderBody()
+                    </main>
+                </div>
+            </div>
+        </div>
+        
+        <div id="content_footer"></div>
+        <div id="footer">
+            <p><a asp-controller="Home" asp-action="Index">Strona Główna</a> | <a asp-controller="Dishes" asp-action="Index">Menu</a> | <a asp-controller="Home" asp-action="Contact">Kontakt</a></p>
+            <p>Copyright &copy; RIGCz </p>
+        </div>
+    </div>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

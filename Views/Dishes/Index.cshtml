@@ -1,0 +1,50 @@
+﻿@model IEnumerable<WebApi.Models.Dish>
+
+@{
+    ViewData["Title"] = "Menu";
+}
+
+<h1>MENU</h1>
+
+<p>
+    <button><a asp-action="Create">Dodaj danie</a></button>
+    
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Nazwa
+            </th>
+            <th>
+                Nasz opis
+            </th>
+            <th>
+                Cena
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+       
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Description)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Prize)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Id">Edytuj</a>
+            </td>
+            <td>
+                <a asp-action="Delete" asp-route-id="@item.Id">Usuń danie</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

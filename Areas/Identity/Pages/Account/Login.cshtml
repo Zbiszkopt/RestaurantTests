@@ -1,0 +1,63 @@
+﻿
+@page
+@model LoginModel
+
+@{
+    ViewData["Title"] = "Logowanie";
+}
+<script src="https://apis.google.com/js/platform.js" async defer></script>
+<meta name="google-signin-client_id" content="151106634930-pqp0njfu98eo9gdugoglmhmjr790lcr5.apps.googleusercontent.com">    
+<h1>@ViewData["Title"]</h1>
+        <section>
+    <div id="site_content">
+            <form id="account" method="post">
+                <h2>Zaloguj się używając adresu email.</h2>
+              
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+            <div class="form_settings form_settings extarea form_settings input">
+                <input asp-for="Input.Email" class="form_settings input form_settings textarea" autocomplete="username" aria-required="true" />
+                Email<label class="form_settings input form_settings textarea"></label>
+                    <span asp-validation-for="Input.Email" class="text-danger"></span>
+                </div>
+
+            <div class="form_settings form_settings textarea form_settings input">
+                <input asp-for="Input.Password" class="form_settings input form_settings textarea" autocomplete="current-password" aria-required="true" />
+                 <label class="form_settings input form_settings textarea">Hasło</label>
+                <span asp-validation-for="Input.Password" class="text-danger"></span>
+            </div>
+
+            <div class="form_settings checkbox">
+                        <label asp-for="Input.RememberMe" class="form-label">
+                        <input class="form_settings checkbox" asp-for="Input.RememberMe" />
+                            Pamiętaj mnie
+                        </label>
+                </div>
+
+                <div>
+                <button class="button button4" type="submit">Zaloguj</button>
+                </div>
+                <p></p>
+
+                <div>
+                   <a id="forgot-password" asp-page="./ForgotPassword">Zapomniałem/am hasło</a><br />
+                   <a asp-page="./Register" asp-route-returnUrl="@Model.ReturnUrl">Zarejestruj</a><br />
+                   <a id="resend-confirmation" asp-page="./ResendEmailConfirmation">Wyślij ponownie email weryfikacyjny</a>
+                </div>
+            </form>
+    </div>
+        </section>
+  
+    <div class="col-md-6 col-md-offset-2">
+        <section>
+            <h3>Użyj innych serwisów do zalogowania.</h3>
+            <hr />              
+                 <p> <div class="g-signin2" data-onsuccess="onSignIn"></div></p>    
+        </section>
+    </div>
+
+
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
